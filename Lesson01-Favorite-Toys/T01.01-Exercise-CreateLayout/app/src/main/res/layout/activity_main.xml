@@ -30,7 +30,6 @@
     <!--TODO (5) Set the text size to 20sp-->
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="wrap_content" />
 
 </FrameLayout>
