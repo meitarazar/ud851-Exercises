@@ -52,8 +52,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     // call setPreferenceSummary on the changed preference
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(getString(R.string.pref_color_key))) {
-            Preference preference = findPreference(key);
+        Preference preference = findPreference(key);
+        if (!(preference instanceof CheckBoxPreference)) {
             setPreferenceSummary(preference,
                     preference.getSharedPreferences().getString(preference.getKey(), ""));
         }
