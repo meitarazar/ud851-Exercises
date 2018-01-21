@@ -142,6 +142,22 @@ public class TaskContentProvider extends ContentProvider {
                         sortOrder
                 );
                 break;
+            case TASK_WITH_ID:
+                String qId = uri.getPathSegments().get(1);
+
+                String qSelection = TaskContract.TaskEntry._ID + " = ?";
+                String[] qSelectionArgs = new String[] {qId};
+
+                data = database.query(
+                        TaskContract.TaskEntry.TABLE_NAME,
+                        projection,
+                        qSelection,
+                        qSelectionArgs,
+                        null,
+                        null,
+                        sortOrder
+                );
+                break;
             default:
                 throw new UnsupportedOperationException("Unknown uri " + uri);
         }
